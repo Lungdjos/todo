@@ -1,6 +1,11 @@
 package com.zra.todo.entities;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class UserTodo extends AbstractEntity{
@@ -9,6 +14,9 @@ public class UserTodo extends AbstractEntity{
     private String username;
     private String password;
     private String phone;
+
+    @OneToMany(mappedBy = "userTodo", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<TodoActivity> todoActivities = new HashSet<>();
 
     public String getfName() {
         return fName;

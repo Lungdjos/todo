@@ -1,19 +1,28 @@
 package com.zra.todo.entities;
 
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class TodoActivity extends AbstractEntity{
-    private  String activity;
+    private  String task;
     private boolean status;
-    private Date startDate;
+    private Timestamp startDate;
     private Date endDate;
 
-    public String getActivity() {
-        return activity;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_todo_id")
+    private UserTodo userTodo;
+
+    public String getTask() {
+        return task;
     }
 
-    public void setActivity(String activity) {
-        this.activity = activity;
+    public void setTask(String task) {
+        this.task = task;
     }
 
     public boolean isStatus() {
@@ -24,11 +33,11 @@ public class TodoActivity extends AbstractEntity{
         this.status = status;
     }
 
-    public Date getStartDate() {
+    public Timestamp getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(Timestamp startDate) {
         this.startDate = startDate;
     }
 
