@@ -57,4 +57,12 @@ public class UserTodo extends AbstractEntity{
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+    public Set<TodoActivity> getTodoActivities() {
+        return todoActivities;
+    }
+
+    public void setTodoActivities(Set<TodoActivity> todoActivities) {
+        this.todoActivities = todoActivities;
+    }
 }
