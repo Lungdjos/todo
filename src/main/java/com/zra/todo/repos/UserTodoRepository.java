@@ -5,8 +5,10 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.stereotype.Repository;
 
-@NoRepositoryBean
+import java.util.Optional;
+
+
 @Repository
 public interface UserTodoRepository<UserTodo extends AbstractAuditable, Long> extends JpaRepository<UserTodo, Long> {
-    UserTodo findByUsername(String username);
+    Optional<UserTodo> findByUsername(String username);
 }
