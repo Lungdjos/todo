@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 
 @Service
-public class UserTodoServiceImpl implements UserTodoService, UserDetailsService {
+public class UserTodoServiceImpl implements UserTodoService {
     @Autowired
     private UserTodoRepository userTodoRepository;
     @Autowired
