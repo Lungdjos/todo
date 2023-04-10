@@ -29,13 +29,11 @@ public class SecurityConfig {
         // disabling cors
         httpSecurity.cors().and().csrf().disable()
                 // authenticating the index page
-                .authorizeRequests().requestMatchers("/", "/index","/todo/**").authenticated()
+                .authorizeHttpRequests().requestMatchers("/", "/index","/todo/**").authenticated()
                 .and()
                 .authorizeHttpRequests().anyRequest().permitAll()
                 .and()
-                .formLogin(form->{
-                    form.loginPage("/login").permitAll();
-                });
+                .formLogin(form-> form.loginPage("/login").permitAll());
         return httpSecurity.build();
     }
     @Bean
