@@ -1,5 +1,6 @@
 package com.zra.todo.entities;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -7,6 +8,7 @@ import jakarta.persistence.ManyToOne;
 import java.sql.Timestamp;
 import java.util.Date;
 
+@Entity
 public class TodoActivity extends AbstractEntity{
     private  String task;
     private boolean status;
@@ -47,5 +49,13 @@ public class TodoActivity extends AbstractEntity{
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public UserTodo getUserTodo() {
+        return userTodo;
+    }
+
+    public void setUserTodo(UserTodo userTodo) {
+        this.userTodo = userTodo;
     }
 }
