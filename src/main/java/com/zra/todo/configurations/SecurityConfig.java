@@ -31,9 +31,9 @@ public class SecurityConfig {
                 // authenticating the index page
                 .authorizeHttpRequests().requestMatchers("/", "/index","/todo/**").authenticated()
                 .and()
-                .authorizeHttpRequests().anyRequest().permitAll()
-                .and()
-                .formLogin(form-> form.loginPage("/login").permitAll());
+                .formLogin(form-> form.loginPage("/login").permitAll())
+                .authorizeHttpRequests().anyRequest().permitAll();
+
         return httpSecurity.build();
     }
     @Bean
