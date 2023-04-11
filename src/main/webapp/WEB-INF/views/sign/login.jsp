@@ -25,22 +25,44 @@
                         <img src="https://www.zra.org.zm/wp-content/uploads/2019/10/logo-01-01-300x300-e1595946239397.png"/>
                     </div>
                     <h4 class="text-center my-4">Login your account</h4>
-                    <form action="loginValidation" method="post">
+                    <form id="login" action="/login" method="post">
                         <div class="form-group mb-3">
                           <label for="Username">Username:</label>
-                          <input type="text" name="username" value="" class="form-control" id="" placeholder="Username" required>
+                          <input type="text" name="username" value="" class="form-control" id="username" placeholder="Username" required>
                         </div>
                         <div class="form-group mb-3">
                           <label for="Password">Password:</label>
-                          <input type="password" name="password" value="" class="form-control" id="" placeholder="Password" required>
+                          <input type="password" name="password" value="" class="form-control" id="password" placeholder="Password" required>
                         </div>
                         <button type="submit" value="login" class="btn btn-primary w-100 my-3">Login</button>
                         ${msg}
                     </form>
-                    <p>Do not have an account?<a href="showRegistration"> Register</a></p>
+                    <p>Do not have an account?<a href="register"> Register</a></p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $("#login").submit(function(event) {
+                event.preventDefault(); //to prevent form submission
+                let username = $(this).attr("#username").val();
+                let password = $(this).attr("#password").val();
+
+                // checking if username and password are correct and not empty
+                let usernameRegex = /\S+@\S+\.\S+$/;
+                if(!usernameRegex.test(username)){
+                    $('username').addClass("is-invalid");
+                    return false;
+                }
+                if(!password.trim()==''){
+                    $('password').addClass("is-invalid");
+                    return false;
+                }
+                // Submit form if all inputs are valid
+                $("form").submit();
+            });
+         });
+    </script>
 </body>
 </html>
