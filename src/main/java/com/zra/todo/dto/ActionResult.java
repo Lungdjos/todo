@@ -1,4 +1,4 @@
-package com.zra.todo.services.dto;
+package com.zra.todo.dto;
 
 import com.zra.todo.entities.UserTodo;
 
