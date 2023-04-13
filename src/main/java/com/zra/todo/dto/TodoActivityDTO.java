@@ -1,22 +1,25 @@
-package com.zra.todo.entities;
+package com.zra.todo.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-
+import com.zra.todo.entities.UserTodo;
 import java.util.Date;
 
-@Entity
-public class TodoActivity extends AbstractEntity{
+public class TodoActivityDTO {
     private  String task;
     private boolean status;
     private Date startDate;
     private Date endDate;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_todo_id")
     private UserTodo userTodo;
+
+    public TodoActivityDTO(String task, boolean status){
+        this.task = task;
+        this.status = status;
+    }
+    public TodoActivityDTO(String task, boolean status, Date startDate, Date endDate){
+        this.task = task;
+        this.status = status;
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
 
     public String getTask() {
         return task;
