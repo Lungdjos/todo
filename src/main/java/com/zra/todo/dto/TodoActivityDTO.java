@@ -21,6 +21,9 @@ public class TodoActivityDTO {
         this.endDate = endDate;
     }
 
+    public TodoActivityDTO() {
+        //TODO Auto-generated constructor stub
+    }
     public String getTask() {
         return task;
     }

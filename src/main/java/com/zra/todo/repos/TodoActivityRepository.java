@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TodoActivityRepository extends JpaRepository<TodoActivity, Long> {
+    TodoActivity findTaskById(long id);
 }
