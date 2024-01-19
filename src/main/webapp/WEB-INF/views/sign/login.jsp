@@ -35,34 +35,12 @@
                           <input type="password" name="password" value="" class="form-control" id="password" placeholder="Password" required>
                         </div>
                         <button type="submit" value="login" class="btn btn-primary w-100 my-3">Login</button>
-                        ${msg}
                     </form>
                     <p>Do not have an account?<a href="register"> Register</a></p>
                 </div>
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-            $("#login").submit(function(event) {
-                event.preventDefault(); //to prevent form submission
-                let username = $(this).attr("#username").val();
-                let password = $(this).attr("#password").val();
 
-                // checking if username and password are correct and not empty
-                let usernameRegex = /\S+@\S+\.\S+$/;
-                if(!usernameRegex.test(username)){
-                    $('username').addClass("is-invalid");
-                    return false;
-                }
-                if(!password.trim()==''){
-                    $('password').addClass("is-invalid");
-                    return false;
-                }
-                // Submit form if all inputs are valid
-                $("form").submit();
-            });
-         });
-    </script>
 </body>
 </html>

@@ -49,12 +49,12 @@
                         </div>
                         <div class="form-group mb-3">
                           <label for="password">Password</label>
-                          <input type="password" name="password" value="" class="form-control" id="password" placeholder="Password" required>
+                          <input type="password" minlength=8 name="password" value="" class="form-control" id="password" placeholder="Password" required>
                           <small id="" class="form-text text-muted">We will never share your email with anyone else.</small>
                         </div>
                         <div class="form-group mb-3">
                           <label for="password">Confirm Password</label>
-                          <input type="password" name="confirmPassword" value="" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
+                          <input type="password" minlength=8 name="confirmPassword" value="" class="form-control" id="confirm_password" placeholder="Confirm Password" required>
                         </div>
                         <button type="submit" value="register" class="btn btn-primary w-100 my-3">Register User</button>
                     </form>
