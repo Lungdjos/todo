@@ -19,8 +19,8 @@ import java.util.Set;
 @Setter
 @Entity
 public class UserTodo extends AbstractEntity{
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     @Column(unique = true)
     private String username;
     private String password;

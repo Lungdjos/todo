@@ -37,8 +37,8 @@ public class UserTodoServiceImpl implements UserTodoService {
                 return new ActionResult(false, "User already exists " + userDTO.getUsername());
             }
             var newUser = new UserTodo();
-            newUser.setfName(userDTO.getfName());
-            newUser.setlName(userDTO.getlName());
+            newUser.setFirstName(userDTO.getFirstName());
+            newUser.setLastName(userDTO.getLastName());
             newUser.setUsername(userDTO.getUsername());
             newUser.setPassword(passwordEncoder.encode(userDTO.getPassword()));
             newUser.setPhone(userDTO.getPhone());

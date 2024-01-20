@@ -19,4 +19,7 @@ public class TodoActivityDTO {
     private Date startDate;
     private Date endDate;
     private UserTodo userTodo;
+
+    public TodoActivityDTO(String todo, boolean b, Date start, Date end) {
+    }
 }

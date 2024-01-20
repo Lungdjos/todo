@@ -33,15 +33,15 @@
                         <div class="row mb-3 ">
                         <label for="fullName">Full name</label>
                             <div class="col">
-                                <input type="text" name="fName" value="" class="form-control" id="fName" placeholder="First name" required>
+                                <input type="text" name="firstName" value="" class="form-control firstName" id="fullName" placeholder="First name" required>
                             </div>
                             <div class="col">
-                                <input type="text" name="lName" value="" class="form-control" id="lName" placeholder="Last name" required>
+                                <input type="text" name="lastName" value="" class="form-control lastName" id="full-Name" placeholder="Last name" required>
                             </div>
                         </div>
                         <div class="form-group mb-3">
                           <label for="email">Email address</label>
-                          <input type="email" name="username" value="" class="form-control" id="username" placeholder="Enter email" required>
+                          <input type="email" name="username" value="" class="form-control" id="email" placeholder="Enter email" required>
                         </div>
                         <div class="form-group mb-3">
                           <label for="email">Phone</label>
@@ -64,13 +64,14 @@
         </div>
     </div
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <script>
         $(document).ready(function() {
           $('#register-form').submit(function(event) {
             event.preventDefault(); // prevent form submission
 
-            var firstName = $(this).attr('#fName').val();
-            var lastName = $(this).attr('#lName').val();
+            var firstName = $(this).attr('.firstName').val();
+            var lastName = $(this).attr('.lastName').val();
             var email = $(this).attr('#username').val();
             var phone = $(this).attr('#phone').val();
             var password = $(this).attr('#password').val();
@@ -78,20 +79,20 @@
 
             // check if first name is empty
             if (firstName.trim() == '') {
-              $('#fName').addClass('is-invalid'); // add is-invalid class to input field
+              $('.firstName').addClass('is-invalid'); // add is-invalid class to input field
               return false; // Stop form submission
             }
 
             // check if last name is empty
             if (lastName.trim() == '') {
-              $('#lName').addClass('is-invalid'); // Add is-invalid class to input field
+              $('.lastName').addClass('is-invalid'); // Add is-invalid class to input field
               return false; // Stop form submission
             }
 
             // check if email is valid
             var emailRegex = /\S+@\S+\.\S+$/;
             if (!emailRegex.test(email)) {
-              $('#username').addClass('is-invalid'); // Add is-invalid class to input field
+              $('#email').addClass('is-invalid'); // Add is-invalid class to input field
               return false; // Stop form submission
             }
 

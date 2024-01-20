@@ -13,8 +13,8 @@ import lombok.Setter;
 @Setter
 public class CreateUserDTO {
     // attributes
-    private String fName;
-    private String lName;
+    private String firstName;
+    private String lastName;
     private String username;
     private String password;
     private String phone;
